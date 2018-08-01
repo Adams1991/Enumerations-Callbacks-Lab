@@ -25,4 +25,9 @@ Cinema.prototype.allFilmsOverDuration = function (duration) {
   return this.films.every(film => film.length > duration)
 };
 
+Cinema.prototype.sumOfFilmsDuration = function () {
+  let total = 0;
+  return this.films.reduce((total, film) => total += film.length , total)
+};
+
 module.exports = Cinema;
