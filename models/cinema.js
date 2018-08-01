@@ -13,10 +13,6 @@ Cinema.prototype.findByTitle = function (title) {
 };
 
 
-Cinema.prototype.filterByGenre = function(genre){
-  return this.films.filter(film => film.genre === genre);
-}
-
 Cinema.prototype.hasFilmFromYear = function(year){
   return this.films.some(film => film.year === year)
 };
@@ -28,6 +24,10 @@ Cinema.prototype.allFilmsOverDuration = function (duration) {
 Cinema.prototype.sumOfFilmsDuration = function () {
   let total = 0;
   return this.films.reduce((total, film) => total += film.length , total)
+};
+
+Cinema.prototype.filmsByProperty = function (property, value) {
+  return this.films.filter(film => film[property] === value);
 };
 
 module.exports = Cinema;
